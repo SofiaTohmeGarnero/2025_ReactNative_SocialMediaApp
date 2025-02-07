@@ -1,5 +1,14 @@
 import React, {useEffect, useState} from 'react';
-import {Pressable, ScrollView, StyleSheet, Switch, Text, TextInput, View} from 'react-native';
+import {
+  Platform,
+  Pressable,
+  ScrollView,
+  StyleSheet,
+  Switch,
+  Text,
+  TextInput,
+  View,
+} from 'react-native';
 
 const MyText = () => {
   const [name, setName] = useState('');
@@ -8,8 +17,21 @@ const MyText = () => {
 
   return (
     <ScrollView>
-      <View style={{flexDirection: 'row', alignItems:'center'}}>
+      <View style={{flexDirection: 'row', alignItems: 'center'}}>
         <Switch
+          style={
+            Platform.OS === 'android' && {
+              transform: [{scaleX: 1.5}, {scaleY: 1.5}],
+            }
+          }
+          ios_backgroundColor={'#000'}
+
+          trackColor={
+            /* Platform.OS === 'android' &&  */{
+              false: 'grey',
+              true: 'red',
+            }
+          }
           value={display}
           onValueChange={() => setDisplay(!display)}></Switch>
         <Text>Show your personal data</Text>
@@ -34,7 +56,9 @@ const MyText = () => {
           />
         </View>
       )}
-      <Pressable onPress={() => console.log(name, age)}><Text>Send</Text></Pressable>
+      <Pressable onPress={() => console.log(name, age)}>
+        <Text>Send</Text>
+      </Pressable>
     </ScrollView>
   );
 };

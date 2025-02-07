@@ -4,6 +4,7 @@ import {UserProfileImage} from '../../UserProfileImage/UserProfileImage';
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import {faEllipsisH} from '@fortawesome/free-solid-svg-icons';
 import { faBookmark, faHeart, faMessage } from '@fortawesome/free-regular-svg-icons';
+import { horizontalScale, scaleFontSize, verticalScale } from '../../../util/scalling';
 
 interface userPostProps {
   item: IUserPost;
@@ -86,25 +87,25 @@ const style = StyleSheet.create({
     color: '#79869F',
     fontFamily: 'Inter',
     fontWeight: '200',
-    fontSize: 12,
-    marginTop: 5,
+    fontSize: scaleFontSize(12),
+    marginTop: verticalScale(5),
   },
   postImageContainer: {
     alignItems: 'center',
-    marginVertical: 20,
+    marginVertical: verticalScale(20),
   },
   userActionsContainer:{
     flexDirection: 'row',
     justifyContent: 'flex-start',
-    paddingLeft: 4,
+    paddingLeft: horizontalScale(4),
   },
   userAction:{
     flexDirection: 'row',
     justifyContent: 'flex-start',
-    marginRight: 27,
+    marginRight: horizontalScale(27),
   },
   textAction:{
-    marginLeft: 3, 
+    marginLeft: horizontalScale(3), 
     color: '#79869F'
   }
 });
