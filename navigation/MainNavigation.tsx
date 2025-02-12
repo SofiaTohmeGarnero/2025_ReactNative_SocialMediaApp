@@ -15,7 +15,7 @@ const MainNavigation = () => {
   return (
     <Stack.Navigator
       screenOptions={{header: () => null, headerShown: false}}
-      initialRouteName={Routes.Home}
+      //initialRouteName={Routes.Home}
     >
       <Stack.Screen name={'Drawer'} component={MainMenuNavigation} />
     </Stack.Navigator>
