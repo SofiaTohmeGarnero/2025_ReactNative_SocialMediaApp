@@ -5,32 +5,15 @@
  * @format
  */
 
-import React, {useState} from 'react';
-import type {PropsWithChildren} from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  TextInput,
-  TouchableOpacity,
-  useColorScheme,
-  View,
-} from 'react-native';
-import { Header } from './components/Header/Header';
-import { UserStoriesNavbar } from './components/UserStoriesNavbar/UserStoriesNavbar';
-import { UserPostsBody } from './components/UserPostsBody/UserPostsBody';
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import MainNavigation from './navigation/MainNavigation';
 
 function App(): React.JSX.Element {
   return (
-    <>
-      <SafeAreaView>
-        <Header />
-        <UserStoriesNavbar />
-        <UserPostsBody />
-      </SafeAreaView>
-    </>
+    <NavigationContainer>
+        <MainNavigation />
+    </NavigationContainer>
   );
 }
 

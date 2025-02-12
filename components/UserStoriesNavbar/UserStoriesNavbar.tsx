@@ -41,7 +41,7 @@ export const UserStoriesNavbar = () => {
         data={userStoriesRenderedData}
         renderItem={item => (
           <UserStory
-            key={item.index}
+            key={`story-${item.index}`}
             firstName={item.item.firstName}
             profileImage={item.item.profileImage}
           />

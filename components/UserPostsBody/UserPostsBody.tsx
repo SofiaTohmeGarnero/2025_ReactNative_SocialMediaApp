@@ -5,7 +5,7 @@ import {UserPost} from './UserPost/UserPost';
 import {pagination} from '../../util/pagination';
 
 export const UserPostsBody = () => {
-  const userPostsPageSize = 2;
+  const userPostsPageSize = 3;
   const [userPostsCurrentPage, setUserPostsCurrentPage] = useState(1);
   const [userPostsRenderedData, setUserPostsRenderedData] = useState<IUserPost[]>([]);
   const [isLoadingUserPosts, setIsLoadingUserPosts] = useState(false);
@@ -38,8 +38,8 @@ export const UserPostsBody = () => {
         showsVerticalScrollIndicator={false}
         data={userPostsRenderedData}
         renderItem={item => (
-          <View style={style.userPostContainer}>
-            <UserPost key={item.index} item={item.item} />
+          <View style={style.userPostContainer} key={`post-${item.item.id}`}>
+            <UserPost item={item.item} />
           </View>
         )}
       />
