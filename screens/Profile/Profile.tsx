@@ -1,7 +1,8 @@
 import { useNavigation } from '@react-navigation/native';
-import {Image, SafeAreaView, ScrollView, Text, TouchableOpacity, View} from 'react-native';
+import {Image, SafeAreaView, ScrollView, Text, View} from 'react-native';
 import { globalStyle } from '../../assets/styles/globalStyle';
 import style from './style';
+import { ProfileTabsNavigation } from '../../navigation/MainNavigation';
 
 function Profile(): React.JSX.Element {
   const navigation = useNavigation();
@@ -24,7 +25,7 @@ function Profile(): React.JSX.Element {
    * inside the scroll view will help you fix an issue of scroll views    
    */
 
-  
+
   return (
     <SafeAreaView  style={[globalStyle.whiteBG, {flex: 1}]}>
       <ScrollView contentContainerStyle={globalStyle.flexGrow}>
@@ -52,6 +53,9 @@ function Profile(): React.JSX.Element {
             <Text style={style.statAmount}>100</Text>
             <Text style={style.statType}>Posts</Text>
           </View>
+        </View>
+        <View style={{flex: 1}}>
+          <ProfileTabsNavigation />
         </View>
       </ScrollView>
     </SafeAreaView>
